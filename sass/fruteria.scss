@@ -1,0 +1,174 @@
+// Variables
+$primary-color: #9ee09c;
+$color-title: #0f130f;
+$font-family: Arial, sans-serif;
+$font-size: 1rem;
+$base-font-size: 16px;
+$card-bg-color: #f2f2f2;
+$colorFrutas: #ff5733, #33ff57, #9d8ce7, #ffb533, #33ffb5, #b533ff;
+$colors: lightblue, #9d8ce7, lightyellow;
+
+
+// Selectores
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+table {
+  background-color: #f1f4c1;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px #bbb;
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+.delimitador {
+  border-top: 1px solid black;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+
+// Funciones
+@function calc-font-size($size) {
+  @return $size * $font-size;
+}
+@function random-color($colors) {
+  $random-index: floor(random() * length($colors));
+  @return nth($colors, $random-index);
+}
+// Mixins
+@mixin text-color($color) {
+  color: $color;
+}
+
+@mixin title-style {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $color-title;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.card-title {
+  @include title-style();
+}
+
+@mixin contact-section {
+  background-color: #f1f4c1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+// Bucle
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: calc-font-size($i);
+  }
+}
+
+// Bucle para tarjetas de frutas
+@for $j from 1 through 6 {
+  .fruit-card-#{$j} {
+    background-color: nth($colorFrutas, $j);
+  }
+}
+
+// Includes
+@import '../css/bootstrap.min.css';
+
+// Sobreescribir estilos de Bootstrap
+body {
+  background-color: $primary-color;
+}
+
+.card {
+  background-color: random-color($colors);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: random-color($colors);
+  }
+
+  .card-text {
+    font-size: 16px;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  @include text-color(#333);
+}
+
+h1 {
+  font-size: $base-font-size * 2;
+}
+#contact-section {
+  @include contact-section;
+}
+
+footer {
+  .container {
+    p {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #999;
+      font-size: 0.8rem;
+
+      &:hover {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
