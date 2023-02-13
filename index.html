@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="sass/fruteria.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="icon" href="images/icon.png">
+  <title>Frutería</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="icon">
+          FRUTERÍA SASS
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Precios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  <div class="container my-5">
+    <h3 class="text-center">Unidades en venta</h3>
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="images/melocoton.jpg" class="card-img-top" alt="Melocotón">
+          <div class="card-body">
+            <h5 class="card-title">Melocotón</h5>
+            <p class="card-text">Los melocotones, junto con albaricoques, cerezas y ciruelas, son frutas de hueso o carozo </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="images/guayaba.jpg" class="card-img-top" alt="Guayaba">
+          <div class="card-body">
+            <h5 class="card-title">Guayaba</h5>
+            <p class="card-text">Origen: México</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card">
+          <img src="images/pera.png" class="card-img-top" alt="Pera">
+          <div class="card-body">
+            <h5 class="card-title">Pera</h5>
+            <p class="card-text">Origen: China</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="delimitador"></section>
+  <section id="pricing">
+    <div class="container">
+      <h3 class="text-center">Tabla de precios</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Disponibilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Melocotón</td>
+            <td>2.50€/kg</td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>Guayaba</td>
+            <td>18.61€/kg</td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>Peras</td>
+            <td>1.70€/kg</td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="delimitador"></section>
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title text-center">Contáctanos</h2>
+      <form action="#">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Ingrese su email">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje:</label>
+          <textarea class="form-control" id="message" rows="3" placeholder="Ingrese su mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+  <footer class="bg-light py-3">
+    <div class="container">
+      <p class="text-center">Todos los derechos reservados &copy; Frutería SASS {{ current_year }}</p>
+      <div class="d-flex justify-content-center">
+        <a href="#" class="mx-3">Política de privacidad</a>
+        <a href="#" class="mx-3">Términos y condiciones</a>
+        <a href="#" class="mx-3">Contacto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
